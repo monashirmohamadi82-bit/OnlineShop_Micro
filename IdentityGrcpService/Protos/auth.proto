@@ -1,0 +1,190 @@
+syntax = "proto3";
+
+option csharp_namespace = "IdentityGrpcService";
+
+package auth;
+
+
+service AuthService {
+
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+
+  rpc Login (LoginRequest) returns (LoginResponse);
+
+  rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse);
+
+  rpc AssignRoleToUser  (AssignRoleRequest) returns (AssignRoleResponse);
+
+  rpc GetAllRoles (GetAllRolesRequest) returns (GetAllRolesResponse);
+
+  rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleResponse);
+
+  rpc AddClaimToUser (AddClaimToUserRequest) returns (AddClaimToUserResponse);
+
+  rpc GetUserClaims (GetUserClaimsRequest) returns (GetUserClaimsResponse);
+
+  rpc AddClaimToRole (AddClaimToRoleRequest) returns (AddClaimToRoleResponse);
+
+  rpc RemoveClaimFromUser (RemoveClaimFromUserRequest) returns (RemoveClaimFromUserResponse);
+
+  rpc GetRoleClaims (GetRoleClaimsRequest) returns (GetRoleClaimsResponse);
+
+  rpc RemoveClaimFromRole (RemoveClaimFromRoleRequest) returns (RemoveClaimFromRoleResponse);
+
+  rpc GetUserRole(GetUserRoleRequset) returns (GetUserRoleResponse);
+
+  rpc RemoveUserRole(RemoveUserRoleRequset) returns (RemoveUserRoleResponse);
+
+}
+
+//register
+message RegisterRequest {
+  string userName = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message RegisterResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+
+//Login
+message LoginRequest {
+  string userName = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  bool success = 1;
+  string token = 2;
+  string message = 3;
+}
+
+
+//craete role
+message CreateRoleRequest{
+string roleName=1;
+}
+
+message CreateRoleResponse{
+bool success=1;
+string message=2;
+}
+
+//get all role
+message GetAllRolesRequest{
+
+}
+message GetAllRolesResponse {
+  repeated string roles = 1;
+}
+
+//delete role
+message DeleteRoleRequest{
+string roleName = 1;
+}
+message DeleteRoleResponse{
+bool success = 1;
+string message = 2;
+}
+
+
+//assing role to user
+message AssignRoleRequest {
+  string userName = 1;
+  string roleName = 2;
+}
+
+message AssignRoleResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+//add claim to user
+message AddClaimToUserRequest{
+string userId=1;
+string claimType=2;
+string claimValue=3;
+}
+
+message AddClaimToUserResponse{
+bool success = 1;
+string message = 2;
+}
+
+//get user to claim
+message GetUserClaimsRequest {
+  string userId = 1;
+}
+
+message ClaimDto {
+  string type = 1;
+  string value = 2;
+}
+
+message GetUserClaimsResponse {
+  repeated ClaimDto claims = 1;
+}
+
+//add claim to role
+message AddClaimToRoleRequest{
+string roleName=1;
+string claimType=2;
+string claimValue=3;
+}
+
+message AddClaimToRoleResponse{
+bool success=1;
+string message=2;
+}
+
+//remove claim from user
+message RemoveClaimFromUserRequest {
+  string userId = 1;
+  string claimType = 2;
+  string claimValue = 3;
+}
+message RemoveClaimFromUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+//get role calim
+message GetRoleClaimsRequest {
+  string roleName = 1;
+}
+message GetRoleClaimsResponse {
+  repeated ClaimDto claims = 1;
+}
+
+//remove claim from role
+message RemoveClaimFromRoleRequest {
+  string roleName = 1;
+  string claimType = 2;
+  string claimValue = 3;
+}
+
+message RemoveClaimFromRoleResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+//get user roles
+message GetUserRoleRequset{
+string userId=1;
+}
+message GetUserRoleResponse{
+repeated string roles = 1;
+}
+
+//remove user role
+message RemoveUserRoleRequset{
+string userId=1;
+string roleName=2;
+}
+message RemoveUserRoleResponse{
+ bool success = 1;
+ string message = 2;
+}

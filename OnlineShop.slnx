@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="IdentityApi/IdentityApi.csproj" Id="9978716d-2e02-4bb8-bf64-837c18f42f9b" />
+  <Project Path="IdentityGrcpService/IdentityGrcpService.csproj" Id="79056e36-dbf9-43fb-b86e-8c6a4a086d37" />
+</Solution>
