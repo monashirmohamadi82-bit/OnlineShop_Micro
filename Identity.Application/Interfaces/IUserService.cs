@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace IdentityGrcpService.Services
+namespace IdentityGrcpService.C2_ApplicationIdentity.Interfaces
 {
     public interface IUserService
     {

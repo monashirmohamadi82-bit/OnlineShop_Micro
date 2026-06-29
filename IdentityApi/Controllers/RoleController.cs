@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using IdentityApi.Dto;
-using IdentityGrcpService.Entites;
+using IdentityGrpcService.C1_DomainIdentity.Entites;
 using IdentityGrpcService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

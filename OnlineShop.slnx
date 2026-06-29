@@ -1,4 +1,12 @@
 <Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Identity/">
+    <Project Path="dentity.Infrastructure/dentity.Infrastructure.csproj" Id="570bd197-5b95-49e2-abb7-79f9abcde699" />
+    <Project Path="Identity.Api/Identity.Api.csproj" Id="398bf043-d022-4fef-a98d-ab43e4cf60b6" />
+    <Project Path="Identity.Application/Identity.Application.csproj" Id="480752eb-1782-4ff2-a668-8719013ae449" />
+    <Project Path="Identity.Domain/Identity.Domain.csproj" Id="7124792d-619c-4a57-bbc9-e97d066857a0" />
+  </Folder>
   <Project Path="IdentityApi/IdentityApi.csproj" Id="9978716d-2e02-4bb8-bf64-837c18f42f9b" />
   <Project Path="IdentityGrcpService/IdentityGrcpService.csproj" Id="79056e36-dbf9-43fb-b86e-8c6a4a086d37" />
 </Solution>

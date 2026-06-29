@@ -1,5 +1,5 @@
 using IdentityApi.Mappings;
-using IdentityGrcpService.Services;
+using IdentityGrcpService.C3_InfrastructureIdentity.Services;
 using IdentityGrpcService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;

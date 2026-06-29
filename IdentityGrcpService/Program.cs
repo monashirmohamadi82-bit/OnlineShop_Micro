@@ -1,7 +1,10 @@
 
 
-using IdentityGrcpService.Entites;
-using IdentityGrcpService.Services;
+using IdentityGrcpService.C2_ApplicationIdentity.Interfaces;
+using IdentityGrcpService.C3_InfrastructureIdentity.DependencyInjection;
+using IdentityGrcpService.C3_InfrastructureIdentity.Services;
+using IdentityGrcpService.C4_PresentationIdentity;
+using IdentityGrpcService.C1_DomainIdentity.Entites;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +21,7 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<JwtTokenService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 

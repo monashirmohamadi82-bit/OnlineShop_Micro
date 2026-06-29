@@ -1,4 +1,4 @@
-﻿using IdentityGrcpService.Entites;
+﻿using IdentityGrpcService.C1_DomainIdentity.Entites;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Data;
@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace IdentityGrcpService.Services
+namespace IdentityGrcpService.C3_InfrastructureIdentity.Services
 {
     public class JwtTokenService
     {

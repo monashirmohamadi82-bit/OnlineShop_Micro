@@ -1,12 +1,13 @@
-﻿using System.Globalization;
+﻿using IdentityGrpcService;
+using System.Globalization;
 using System.Security.Claims;
 
-namespace IdentityGrcpService.Services
+namespace IdentityGrcpService.C2_ApplicationIdentity.Interfaces
 {
     public interface IRoleService 
     {
 
-        Task<bool> CreateRoleAsync(string RoleName);
+        Task<CreateRoleResponse> CreateRoleAsync(string RoleName);
         Task<List<string>> GetAllRolesAsync();
         Task<bool> DeleteRoleAsync(string RoleName);
         Task<bool> AddClaimToRoleAsync(string RoleName,string claimType,string claimValue);

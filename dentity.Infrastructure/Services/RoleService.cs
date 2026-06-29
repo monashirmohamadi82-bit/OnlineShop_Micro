@@ -1,8 +1,11 @@
-﻿using IdentityGrcpService.Entites;
+﻿using IdentityGrcpService.C2_ApplicationIdentity.Interfaces;
+using IdentityGrcpService.C3_InfrastructureIdentity.Services;
+using IdentityGrpcService;
+using IdentityGrpcService.C1_DomainIdentity.Entites;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
-namespace IdentityGrcpService.Services
+namespace IdentityGrcpService.C3_InfrastructureIdentity.Services
 {
     public class RoleService : IRoleService
     {
@@ -21,7 +24,7 @@ namespace IdentityGrcpService.Services
 
 
         ///create  role 
-        public async Task<bool> CreateRoleAsync(string RoleName)
+        public async Task<CreateRoleResponse> CreateRoleAsync(string RoleName)
         {
 
             try {
@@ -29,11 +32,20 @@ namespace IdentityGrcpService.Services
 
                 role.Name = RoleName;
                 var result = await roleManager.CreateAsync(role);
-                return result.Succeeded;
+
+                return new CreateRoleResponse
+                {
+                    Success = result.Succeeded,
+                    Message = result.Succeeded ? "Role created successfully" : "Failed to create role"
+                };
             }
             catch (Exception ex)
             {
-                throw new Exception("Craete Role failed: " + ex.Message);
+                return new CreateRoleResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                };
             }
          }
 

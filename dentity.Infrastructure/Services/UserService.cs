@@ -1,8 +1,10 @@
-﻿using IdentityGrcpService.Entites;
+﻿using IdentityGrpcService.C1_DomainIdentity.Entites;
+using IdentityGrcpService.C3_InfrastructureIdentity.Services;
+using IdentityGrcpService.C2_ApplicationIdentity.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
-namespace IdentityGrcpService.Services
+namespace IdentityGrcpService.C3_InfrastructureIdentity.Services
 {
     public class UserService : IUserService
     {
